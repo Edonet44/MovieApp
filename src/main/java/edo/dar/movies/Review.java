@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Document(collection = "reviews")
 @Data
@@ -18,5 +19,8 @@ public class Review {
         public Review(String body) {
             this.body = body;
             }
-
+ 
+    public void setReviewBody(String body) {
+        this.body = body;
+    }
 }

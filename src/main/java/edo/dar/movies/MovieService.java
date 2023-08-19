@@ -20,12 +20,16 @@ public class MovieService {
     @Autowired
     private MovieinReposistory movieinReposistory;
 
+    //recupera tutti i movie
     public List<Movie> getallMovies() {
         return movieinReposistory.findAll();
     }
-    
+    //recupera per imdb
     public Optional<Movie> getSingleMovie(String imdbId) {
         return movieinReposistory.findMovieByimdbId(imdbId);
     }
-
+//recupera per title
+    public List<Movie> getSingleMoviesTitle(String Title) {
+        return movieinReposistory.findByTitleContaining(Title);
+}
 }
